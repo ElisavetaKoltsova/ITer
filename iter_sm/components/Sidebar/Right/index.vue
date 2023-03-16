@@ -28,7 +28,7 @@
                     <!--button follow-->
                     <div class="flex h-full">
                         <button class="px-4 py-2 font-bold text-xs text-white bg-black
-                        dark:text-black dark:bg-white rounded-full">Подписаться</button>
+                        dark:text-black dark:bg-white rounded-full">Add+</button>
                     </div>
                 </div>
             </SidebarRightPreviewCardItem>
@@ -39,6 +39,8 @@
 </template>
 
 <script setup>
+
+    
 
     const whatsHappeningItems = ref([
         {
