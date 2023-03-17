@@ -1,5 +1,5 @@
 import {sendError} from "h3"
-import { createUser } from "~~/server/db/users"
+import { createUser } from "~~/server/db/users.js"
 import {userTransformer} from "~~/server/transformers/user.js"
 
 export default defineEventHandler(async (event) => {
