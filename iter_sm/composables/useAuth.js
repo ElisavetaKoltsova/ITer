@@ -1,3 +1,4 @@
+
 export default () => {
     const useAuthToken = () => useState('auth_token')
     const useAuthUser = () => useState('auth_user')
@@ -12,9 +13,9 @@ export default () => {
         authUser.value = newUser
     }
 
-    const login = ({username, password}) => {
+    const login = ({ username, password }) => {
         return new Promise(async (resolve, reject) => {
-            try{
+            try {
                 const data = await $fetch('/api/auth/login', {
                     method: 'POST',
                     body: {
@@ -22,6 +23,7 @@ export default () => {
                         password
                     }
                 })
+
                 setToken(data.access_token)
                 setUser(data.user)
 

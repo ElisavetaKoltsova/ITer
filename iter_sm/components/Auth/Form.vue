@@ -10,6 +10,10 @@
             <!--Button for Login-->
             <div>
                 <button @click="handleLogin">Войти</button>
+                
+            </div>
+            <div>
+                <button :value="loginOrReg" @click="changeButtonName">Ещё не зарегистрированы?</button>
             </div>
 
         </div>
@@ -17,6 +21,12 @@
 </template>
 
 <script setup>
+    // const loginOrReg = true
+    // function changeButtonName() {
+    //     loginOrReg = false
+    //     return loginOrReg
+    // }
+    
     
 
     const data = reactive({

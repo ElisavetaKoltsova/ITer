@@ -1,18 +1,18 @@
-import {sendError} from "h3"
-import { createUser } from "~~/server/db/users.js"
-import {userTransformer} from "~~/server/transformers/user.js"
+import { sendError } from "h3"
+import { createUser } from "../../db/users.js"
+import { userTransformer } from "~~/server/transformers/user.js"
 
 export default defineEventHandler(async (event) => {
-    const body = await useBody(event)
+    const body = await readBody(event)
 
-    const {username, email, password, repeatPassword, name} = body
-    if(!username|| !email|| !password|| !repeatPassword|| !name)
-    {
-        return sendError(event, createError({statusCode: 400, statusMessage: 'Неверные параметры'}))
+    const { username, email, password, repeatPassword, name } = body
+
+    if (!username || !email || !password || !repeatPassword || !name) {
+        return sendError(event, createError({ statusCode: 400, statusMessage: 'Invalid params' }))
     }
 
-    if(password !== repeatPassword) {
-        return sendError(event, createError({statusCode: 400, statusMessage: 'Пароли не совпадают'}))
+    if (password !== repeatPassword) {
+        return sendError(event, createError({ statusCode: 400, statusMessage: 'Passwords do not match' }))
     }
 
     const userData = {
@@ -25,7 +25,7 @@ export default defineEventHandler(async (event) => {
 
     const user = await createUser(userData)
 
-    return{
-        body: userTransformer(user) 
+    return {
+        body: userTransformer(user)
     }
 })

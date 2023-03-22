@@ -5,7 +5,7 @@
     <div class="bg-white dark:bg-dim-900">
 
       <!-- APP MAIN APPLICATION-->
-      <div v-if="false" class = "min-h-full">
+      <div v-if="user" class = "min-h-full">
         <div class="grid grid-cols-12 mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:gap-5">
 
           <!--LEFT SIDEBAR-->
@@ -17,7 +17,7 @@
 
           <!--MAIN CONTENT-->
           <main class="col-span-12 md:col-span-8 xl:col-span-6">
-            <RouterView/>
+            <router-view />
           </main>
 
           <!--RIGNT SIDEBAR-->
