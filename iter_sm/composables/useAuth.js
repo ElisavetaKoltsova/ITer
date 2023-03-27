@@ -75,6 +75,7 @@ export default () => {
 
                 resolve(true)
             } catch (error) {
+                //console.log(error)
                 reject(error)
             } finally {
                 setIsAuthLoading(false)
