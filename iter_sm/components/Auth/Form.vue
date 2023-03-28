@@ -10,10 +10,11 @@
             <!--Button for Login-->
             <div>
                 <button @click="handleLogin">Войти</button>
-                
+                <!--<v-btn text to="/login">Login</v-btn>
+                <v-btn text to="/register">Register</v-btn>-->
             </div>
             <div>
-                <button :value="loginOrReg" @click="changeButtonName">Ещё не зарегистрированы?</button>
+                <button @click="changeButtonName">Ещё не зарегистрированы?</button>
             </div>
 
         </div>
@@ -21,11 +22,7 @@
 </template>
 
 <script setup>
-    // const loginOrReg = true
-    // function changeButtonName() {
-    //     loginOrReg = false
-    //     return loginOrReg
-    // }
+    
     
     
 

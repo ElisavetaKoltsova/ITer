@@ -19,8 +19,10 @@
     "@tailwindcss/forms": "^0.5.3",
     "@vue-hero-icons/outline": "^1.7.2",
     "@vueuse/integrations": "^9.13.0",
+    "adonis-bumblebee-ts": "^1.0.0",
     "bcrypt": "^5.1.0",
     "jsonwebtoken": "^9.0.0",
+    "jwt-decode": "^3.1.2",
     "universal-cookie": "^4.0.4",
     "url-pattern": "^1.0.3"
   }

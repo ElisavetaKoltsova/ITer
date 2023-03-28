@@ -1,3 +1,5 @@
+//import {useFetch} from "nuxt/app";
+
 export default (url, options = {}) => {
     const { useAuthToken } = useAuth()
 
