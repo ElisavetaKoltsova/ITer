@@ -1,7 +1,7 @@
 <template>
     <div class="flex items-center justify-center h-screen">
-        <div>
-            
+        <div class="absolute w-20 h-20 animate-ping">
+            <LogoITer />
         </div>
     </div>
 

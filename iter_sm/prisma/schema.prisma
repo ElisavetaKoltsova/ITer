@@ -18,7 +18,12 @@ model User {
   profileImage String?
   createdAt    DateTime       @default(now())
   updatedAt    DateTime       @updatedAt
+
+  //Рефреш токен
   refreshToken RefreshToken[]
+
+  //Посты
+  article Article[]
 }
 
 model RefreshToken {
@@ -30,4 +35,27 @@ model RefreshToken {
   user      User     @relation(fields: [userId], references: [id])
 
   @@index([userId])
+}
+
+model Article {
+  id           String         @id @map("_id") @db.Uuid
+  text String
+
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+
+  //Author
+  author User @relation(fields: [authorId], references: [id])
+  authorId String @db.Uuid
+
+  @@index([authorId])
+
+  //Reply posts
+  replyToId String? @db.Uuid
+  replyTo Article? @relation("replies", fields: [replyToId], references: [id], onDelete: Restrict, onUpdate: Restrict)
+  replies Article[] @relation("replies")
+
+  @@index([replyToId])
+
+  //MediaFiles
 }
