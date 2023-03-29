@@ -19,6 +19,7 @@ export default () => {
         authLoading.value = value
     }
 
+    //ПОСТ запрос на вход пользователя
     const login = ({ username, password }) => {
         return new Promise(async (resolve, reject) => {
             try {
@@ -40,6 +41,7 @@ export default () => {
         })
     }
 
+    //Создание рефреш токена
     const refreshToken = () => {
         return new Promise(async (resolve, reject) => {
             try {
@@ -75,7 +77,6 @@ export default () => {
 
                 resolve(true)
             } catch (error) {
-                //console.log(error)
                 reject(error)
             } finally {
                 setIsAuthLoading(false)

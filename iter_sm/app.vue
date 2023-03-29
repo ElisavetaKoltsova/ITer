@@ -51,4 +51,5 @@ const user = useAuthUser()
 onBeforeMount(() => {
   initAuth()
 })
+
 </script>

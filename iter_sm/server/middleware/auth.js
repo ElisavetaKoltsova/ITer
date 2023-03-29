@@ -9,16 +9,15 @@ export default defineEventHandler(async (event) => {
     const isHandledByThisMiddleware = endpoints.some(endpoints => {
         const pattern = new UrlPattern(endpoints)
 
-        return pattern.match(event.node.req.url)
+        return pattern.match(event.req.url)
     })
 
     if(!isHandledByThisMiddleware){
         return
     }
 
-    const token = event.node.req.headers['authorization']?.split('')[1]
+    const token = event.req.headers.authorization?.split(' ')[1]
     const decoded = decodeAccessToken(token)
-    console.log(decoded)
 
     if(!decoded) {
         return sendError(event, createError({
